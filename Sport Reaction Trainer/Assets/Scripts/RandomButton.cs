@@ -9,18 +9,6 @@ public class RandomButton : MonoBehaviour
     [SerializeField]
     private Button[] buttonArray;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void RandomButtonPicker()
     {
         int indexNumber = Random.Range(0, buttonArray.Length);
@@ -28,6 +16,8 @@ public class RandomButton : MonoBehaviour
         Debug.Log((buttonArray[indexNumber].name));
 
         buttonArray[indexNumber].GetComponent<Image>().color = Color.yellow;
+
+        buttonArray[indexNumber].GetComponent<ButtonPicked>().enabled = true;
     }
 
     public void ResetButtons()
