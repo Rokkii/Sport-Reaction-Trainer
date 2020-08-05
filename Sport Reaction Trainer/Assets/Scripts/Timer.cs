@@ -10,13 +10,13 @@ public class Timer : MonoBehaviour
     public float secondsLeft = 30;
     public string loadLevelName;
 
-    // Start is called before the first frame update
+    // Initially print seconds left to text string
     void Start()
     {
         textDisplay.GetComponent<Text>().text = secondsLeft.ToString("0.0");
     }
 
-    // Update is called once per frame
+    // Whilst there is time remaining, minus from secondsLeft until reaching 0 and display as text
     void Update()
     {
         if (secondsLeft >= 0)
@@ -31,6 +31,7 @@ public class Timer : MonoBehaviour
         }
     }
 
+    // Change scene when player runs out of time
     public void TimeOut()
     {
         Debug.Log("You are out of time");
