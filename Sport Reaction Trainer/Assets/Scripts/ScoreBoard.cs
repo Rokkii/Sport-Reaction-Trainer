@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ScoreBoard : MonoBehaviour
 {
 
-    public static float currentScore = 100;
+    public static float currentScore = 0;
 
     [SerializeField]
     private Text scoreText;
