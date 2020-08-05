@@ -9,6 +9,9 @@ public class ButtonPicked : MonoBehaviour
     [SerializeField]
     private Button currentButton;
 
+	[SerializeField]
+	private RandomButton nextButton;
+
 	void Start()
 	{
 		Button btn = currentButton.GetComponent<Button>();
@@ -18,14 +21,15 @@ public class ButtonPicked : MonoBehaviour
 
 	void TaskOnClick()
 	{
-
 		if (currentButton.GetComponent<ButtonPicked>().enabled == true)
 		{
 			ScoreBoard.currentScore += 100;
+
+			currentButton.GetComponent<Image>().color = Color.grey;
+
+			currentButton.GetComponent<ButtonPicked>().enabled = false;
+
+			nextButton.RandomButtonPicker();
 		}
-
-		currentButton.GetComponent<Image>().color = Color.grey;
-
-		currentButton.GetComponent<ButtonPicked>().enabled = false;
 	}
 }

@@ -9,6 +9,11 @@ public class RandomButton : MonoBehaviour
     [SerializeField]
     private Button[] buttonArray;
 
+    private void Start()
+    {
+        RandomButtonPicker();
+    }
+
     public void RandomButtonPicker()
     {
         int indexNumber = Random.Range(0, buttonArray.Length);
